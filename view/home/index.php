@@ -1,4 +1,4 @@
 <div class="container">
-<h1>Dit is de index van hospital</h1>
-<a href="http://localhost/hospital/hospital"><h3>Hospital</h3></a>
+<h1>Welcome to the Hospital assignment</h1>
+<a href="http://localhost/school/hospital/hospital"><h3>Go to Hospital</h3></a>
 </div>

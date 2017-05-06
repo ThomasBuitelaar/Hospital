@@ -1,3 +1,37 @@
-<?php 
-	echo "<h1>hoi</h1>";	
-?>
+<main>
+	<header>
+		<h1>Hospital</h1>
+	</header>
+	
+		<ul>
+			<li><a href="patients.html">Patiënts</a></li>
+			<li><a href="clients.html">Clients</a></li>
+			<li><a href="species.html">Species</a></li>
+		</ul>
+
+	<h2>Patiënts</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Firstname</th>
+				<th>Lastname</th>
+				<th>Phone</th>
+				<th>Email</th>
+				<th colspan="2">Action</th>
+			</tr>
+		</thead>
+		</tbody>
+		<?php  foreach($clients as $client) { ?>
+			<tr>
+				<td><?= $client['client_firstname']; ?></td>
+				<td><?= $client['client_lastname']; ?></td>
+				<td><?= $client['client_phonenumber']; ?></td>
+				<td><?= $client['client_email']; ?></td>
+				<td class="center"><a href="#">edit</a></td>
+				<td class="center"><a href="#">delete</a></td>
+			</tr>
+			<?php } ?>
+		</tbody>
+	</table>
+		<p><a href="#">Create</a></p>
+		<p><a href="<?= URL ?>home/index">Home</a></p>

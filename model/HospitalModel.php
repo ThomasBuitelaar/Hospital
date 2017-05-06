@@ -1,24 +1,24 @@
 <?php
 
-function getPatient($id)
+function getClient($id)
 {
 	$db = openDatabaseConnection();
 
-	$sql = "SELECT * FROM patient WHERE id = :id";
+	$sql = "SELECT * FROM clients WHERE client_id = :client_id";
 	$query = $db->prepare($sql);
 	$query->execute(array(
-		":id" => $id));
+		":client_id" => $id));
 
 	$db = null;
 
-	return $query->fetch();
+	return $query->fetchAll();
 }
 
-function getAllPatients();
+function getAllClients()
 {
 	$db = openDatabaseConnection();
 
-	$sql = "SELECT * FROM patient";
+	$sql = "SELECT * FROM clients";
 	$query = $db->prepare($sql);
 	$query->execute();
 
@@ -27,25 +27,23 @@ function getAllPatients();
 	return $query->fetchAll();
 }
 
-function editPatient()
+function editClient()
 {
-	$name = isset($_POST['name']) ? $_POST['name'] : null;
-	$species = isset($_POST['species']) ? $_POST['species'] : null;
-	$status = isset($_POST['status']) ? $_POST['species'] : null;
-	$id = isset($_POST['id']) ? $_POST['id'] : null;
+	$client_firstname = isset($_POST['client_firstname']) ? $_POST['client_firstname'] : null;
+	$client_lastname = isset($_POST['client_lastname']) ? $_POST['client_lastname'] : null;
+	$id = isset($_POST['client_id']) ? $_POST['client_id'] : null;
 
-	if (strlen($name) == 0 || strlen($species) == 0 || strlen($status) == 0) {
+	if (strlen($client_firstname) == 0 || strlen($client_lastname) == 0) {
 		return false;
 	}
 
 	$db = openDatabaseConnection();
 
-	$sql = "UPDATE patient SET name = :name, species = :species, status = :status, WHERE id = :id";
+	$sql = "UPDATE clients SET client_firstname = :client_firstname, client_lastname = :client_lastname, WHERE id = :id";
 	$query = $db->perpare($sql);
 	$query->execute(array(
-		':name' => $name,
-		':species' => $species,
-		":status" -> $status,
+		':client_firstname' => $client_firstname,
+		':client_lastname' => $client_lastname,
 		':id' => $id));
 
 	$db = null;
@@ -53,7 +51,7 @@ function editPatient()
 	return true;
 }
 
-function deletePatient($id = null) 
+function deleteClient($id = null) 
 {
 	if (!$id) {
 		return false;
@@ -61,7 +59,7 @@ function deletePatient($id = null)
 	
 	$db = openDatabaseConnection();
 
-	$sql = "DELETE FROM patient WHERE id=:id ";
+	$sql = "DELETE FROM clients WHERE id = :id ";
 	$query = $db->prepare($sql);
 	$query->execute(array(
 		':id' => $id));
@@ -71,24 +69,22 @@ function deletePatient($id = null)
 	return true;
 }
 
-function createPatient() 
+function createClient() 
 {
-	$name = isset($_POST['name']) ? $_POST['name'] : null;
-	$species = isset($_POST['species']) ? $_POST['species'] : null;
-	$status = isset($_POST['status']) ? $_POST['status'] : null;
+	$client_firstname = isset($_POST['client_firstname']) ? $_POST['client_firstname'] : null;
+	$client_lastname = isset($_POST['client_lastname']) ? $_POST['client_lastname'] : null;
 	
-	if (strlen($name) == 0 || strlen($species) == 0 || strlen($status) == 0) {
+	if (strlen($client_firstname) == 0 || strlen($client_lastname) == 0) {
 		return false;
 	}
 	
 	$db = openDatabaseConnection();
 
-	$sql = "INSERT INTO patient(name, species, status) VALUES (:name, :species, :status)";
+	$sql = "INSERT INTO clients(client_firstname, client_lastname) VALUES (:client_firstname, :client_lastname)";
 	$query = $db->prepare($sql);
 	$query->execute(array(
-		':name' => $name,
-		':species' => $species,
-		':status' => $status));
+		':client_firstname' => $client_firstname,
+		':client_lastname' => $client_lastname));
 
 	$db = null;
 	
