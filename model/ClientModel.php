@@ -73,18 +73,22 @@ function createClient()
 {
 	$client_firstname = isset($_POST['client_firstname']) ? $_POST['client_firstname'] : null;
 	$client_lastname = isset($_POST['client_lastname']) ? $_POST['client_lastname'] : null;
+	$client_phonenumber = isset($_POST['client_phonenumber']) ? $_POST['client_lastname'] : null;
+	$client_email = isset($_POST['client_email']) ? $_POST['client_email'] : null;
 	
-	if (strlen($client_firstname) == 0 || strlen($client_lastname) == 0) {
+	if (strlen($client_firstname) == 0 || strlen($client_lastname) == 0 || strlen($client_phonenumber) == 0 || strlen($client_email) == 0) {
 		return false;
 	}
 	
 	$db = openDatabaseConnection();
 
-	$sql = "INSERT INTO clients(client_firstname, client_lastname) VALUES (:client_firstname, :client_lastname)";
+	$sql = "INSERT INTO clients(client_firstname, client_lastname, client_phonenumber, client_email) VALUES (:client_firstname, :client_lastname, :client_phonename, :client_email)";
 	$query = $db->prepare($sql);
 	$query->execute(array(
 		':client_firstname' => $client_firstname,
-		':client_lastname' => $client_lastname));
+		':client_lastname' => $client_lastname,
+		':client_phonenumber' => $client_phonenumber,
+		':client_email' => $client_email));
 
 	$db = null;
 	

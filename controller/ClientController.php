@@ -1,9 +1,9 @@
 <?php
 
-require(ROOT . "model/HospitalModel.php");
+require(ROOT . "model/clientModel.php");
 
 function index(){
-	render("hospital/index", array(
+	render("client/index", array(
 		"clients" => getAllClients()
 		));
 }
@@ -11,7 +11,7 @@ function index(){
 
 function create()
 {
-	render("hospital/create");
+	render("client/create");
 }
 
 
@@ -21,14 +21,14 @@ function createSave()
 		header("Location:" . URL . "error/index");
 		exit();
 	}
-	header("Location:" . URL . "hospital/index");
+	header("Location:" . URL . "client/index");
 }
 
 
 function edit($id)
 {
-	render("hospital/edit", array(
-		"hospital" => getAllClients()
+	render("client/edit", array(
+		"client" => getAllClients()
 		));
 }
 
@@ -39,15 +39,15 @@ function editSave()
 		header("Location:" . URL . "error/index");
 		exit();
 	}
-	header("Location:" . URL . "hospital/index");
+	header("Location:" . URL . "client/index");
 }
 
 
 function delete($id)
 {
 	if (!deleteBirthda($id)) {
-		header("Location:" . URL . "hospital/index");
+		header("Location:" . URL . "client/index");
 		exit();
 	}
-	header("Location:" . URL . "hospital/index");
+	header("Location:" . URL . "client/index");
 }

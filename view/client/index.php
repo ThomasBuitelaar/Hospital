@@ -4,12 +4,12 @@
 	</header>
 	
 		<ul>
-			<li><a href="patients.html">Patiënts</a></li>
+			<li><a href="<?= URL ?>patient/">Patiënts</a></li>
 			<li><a href="clients.html">Clients</a></li>
 			<li><a href="species.html">Species</a></li>
 		</ul>
 
-	<h2>Patiënts</h2>
+	<h2>Clients</h2>
 	<table>
 		<thead>
 			<tr>
@@ -33,5 +33,5 @@
 			<?php } ?>
 		</tbody>
 	</table>
-		<p><a href="#">Create</a></p>
+		<p><a href="<?= URL ?>client/create">Create</a></p>
 		<p><a href="<?= URL ?>home/index">Home</a></p>
