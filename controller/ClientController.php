@@ -1,6 +1,6 @@
 <?php
 
-require(ROOT . "model/clientModel.php");
+require(ROOT . "model/ClientModel.php");
 
 function index(){
 	render("client/index", array(
@@ -17,7 +17,7 @@ function create()
 
 function createSave()
 {
-	if(!createclient()) {
+	if(!createClient()) {
 		header("Location:" . URL . "error/index");
 		exit();
 	}
@@ -35,7 +35,7 @@ function edit($id)
 
 function editSave()
 {
-	if (!editclient()) {
+	if (!editClient()) {
 		header("Location:" . URL . "error/index");
 		exit();
 	}
@@ -45,7 +45,7 @@ function editSave()
 
 function delete($id)
 {
-	if (!deleteBirthda($id)) {
+	if (!deleteClient($id)) {
 		header("Location:" . URL . "client/index");
 		exit();
 	}

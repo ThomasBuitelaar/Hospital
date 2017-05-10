@@ -4,9 +4,9 @@
 	</header>
 	
 		<ul>
-			<li><a href="<?= URL ?>patient/">Patiënts</a></li>
-			<li><a href="clients.html">Clients</a></li>
-			<li><a href="species.html">Species</a></li>
+			<li><a href="<?= URL ?>patient">Patiënts</a></li>
+			<li><a href="<?= URL ?>client">Clients</a></li>
+			<li><a href="<?= URL ?>species">Species</a></li>
 		</ul>
 
 	<h2>Clients</h2>
@@ -27,8 +27,8 @@
 				<td><?= $client['client_lastname']; ?></td>
 				<td><?= $client['client_phonenumber']; ?></td>
 				<td><?= $client['client_email']; ?></td>
-				<td class="center"><a href="#">edit</a></td>
-				<td class="center"><a href="#">delete</a></td>
+				<td class="center"><a href="<?php echo URL . 'client/edit/' . $client['client_id']; ?>">edit</a></td>
+				<td class="center"><a href="<?php echo URL . 'client/delete/' . $client['client_id']; ?>">delete</a></td>
 			</tr>
 			<?php } ?>
 		</tbody>
