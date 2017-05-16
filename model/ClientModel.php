@@ -48,7 +48,7 @@ function editClient()
 		':client_lastname' => $client_lastname,
 		':client_phonenumber' => $client_phonenumber,
 		':client_email' => $client_email,
-		':id' => $id));
+		':client_id' => $client_id));
 
 	$db = null;
 
@@ -63,10 +63,10 @@ function deleteClient($id = null)
 	
 	$db = openDatabaseConnection();
 
-	$sql = "DELETE FROM clients WHERE id = :id ";
+	$sql = "DELETE FROM clients WHERE client_id = :client_id ";
 	$query = $db->prepare($sql);
 	$query->execute(array(
-		':id' => $id));
+		':client_id' => $id));
 
 	$db = null;
 	
@@ -77,7 +77,7 @@ function createClient()
 {
 	$client_firstname = isset($_POST['client_firstname']) ? $_POST['client_firstname'] : null;
 	$client_lastname = isset($_POST['client_lastname']) ? $_POST['client_lastname'] : null;
-	$client_phonenumber = isset($_POST['client_phonenumber']) ? $_POST['client_lastname'] : null;
+	$client_phonenumber = isset($_POST['client_phonenumber']) ? $_POST['client_phonenumber'] : null;
 	$client_email = isset($_POST['client_email']) ? $_POST['client_email'] : null;
 	
 	if (strlen($client_firstname) == 0 || strlen($client_lastname) == 0 || strlen($client_phonenumber) == 0 || strlen($client_email) == 0) {
