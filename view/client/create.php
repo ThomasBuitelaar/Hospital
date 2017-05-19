@@ -11,6 +11,6 @@
 	<label>E-Mail: </label><input type="text" name="client_email" placeholder="info@hospital.com"><br>
 
 	<input type="submit" value="Add">
-</form>
+</form> 
 
 </div>

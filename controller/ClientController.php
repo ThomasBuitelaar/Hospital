@@ -25,7 +25,7 @@ function createSave()
 }
 
 
-function edit($id)
+function edit($client_id)
 {
 	render("client/edit", array(
 		"client" => getAllClients()
@@ -46,7 +46,7 @@ function editSave()
 function delete($id)
 {
 	if (!deleteClient($id)) {
-		header("Location:" . URL . "client/index");
+		header("Location:" . URL . "error/index");
 		exit();
 	}
 	header("Location:" . URL . "client/index");

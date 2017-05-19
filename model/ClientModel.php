@@ -11,7 +11,7 @@ function getClient($id)
 
 	$db = null;
 
-	return $query->fetchAll();
+	return $query->fetch();
 }
 
 function getAllClients()
@@ -33,7 +33,7 @@ function editClient()
 	$client_lastname = isset($_POST['client_lastname']) ? $_POST['client_lastname'] : null;
 	$client_phonenumber = isset($_POST['client_phonenumber']) ? $_POST['client_phonenumber'] : null;
 	$client_email = isset($_POST['client_email']) ? $_POST['client_email'] : null;
-	$id = isset($_POST['client_id']) ? $_POST['client_id'] : null;
+	$client_id = isset($_POST['client_id']) ? $_POST['client_id'] : null;
 
 	if (strlen($client_firstname) == 0 || strlen($client_lastname) == 0 || strlen($client_phonenumber) == 0 || strlen($client_email) == 0) {
 		return false;
