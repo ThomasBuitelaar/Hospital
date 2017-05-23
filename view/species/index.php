@@ -8,11 +8,10 @@
 <body>
 	<h1>Hospital</h1>
 	<ul>
-		<li><a href="patients.html">Patiënts</a></li>
-		<li><a href="clients.html">Clients</a></li>
-		<li><a href="species.html">Species</a></li>
+		<li><a href="<?= URL ?>patient">Patiënts</a></li>
+		<li><a href="<?= URL ?>client">Clients</a></li>
+		<li><a href="<?= URL ?>species">Species</a></li>
 	</ul>
-
 	<h2>Species</h2>
 	<table>
 		<thead>

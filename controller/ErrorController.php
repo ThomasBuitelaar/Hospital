@@ -1,6 +1,6 @@
 <?php
 
-function index()
-{
-	echo "Error 404";
-}
+	function index()
+	{
+		echo "Error 404";
+	}
