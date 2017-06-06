@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>Hospital</title>
-	<link rel="stylesheet" href="style.css" type="text/css">
-</head>
-<body>
+	<main>
 	<h1>Hospital</h1>
 	<ul>
 		<li><a href="<?= URL ?>patient">Patiënts</a></li>
@@ -22,21 +15,15 @@
 			</tr>
 		</thead>
 		</tbody>
+		<?php foreach($species as $species) { ?>
 			<tr>
-				<td>1</td>
-				<td>hond</td>
+				<td><?= $species['species_id']; ?></td>
+				<td><?= $species['species_description']; ?></td>
 				<td class="center"><a href="#">edit</a></td>
 				<td class="center"><a href="#">delete</a></td>
 			</tr>
-			<tr>
-				<td>2</td>
-				<td>kat</td>
-				<td class="center"><a href="#">edit</a></td>
-				<td class="center"><a href="#">delete</a></td>
-			</tr>
+			<?php } ?>
 		</tbody>
 	</table>
 		<p><a href="#">Create</a></p>
-		<p><a href="index.html">Home</a></p>
-	</body>
-</html>
+		<p><a href="<?= URL ?>home/index">Home</a></p>

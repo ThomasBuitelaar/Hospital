@@ -1,4 +1,3 @@
-
 <main>
 	<h1>Hospital</h1>
 	<ul>
@@ -19,17 +18,17 @@
 			</tr>
 		</thead>
 		</tbody>
+		<?php foreach($patients as $patient) { ?>
 			<tr>
-				<td>B</td>
-				<td>hond</td>
-				<td>Koorts, eet slecht, blaft veel te veel</td>
-				<td>John Doe</td>
+				<td><?= $patient['patient_name']; ?></td>
+				<td><?= $patient['species_id']; ?></td>
+				<td><?= $patient['patient_status']; ?></td>
+				<td><?= $patient['client_id']; ?></td>
 				<td class="center"><a href="#">edit</a></td>
 				<td class="center"><a href="#">delete</a></td>
 			</tr>
+			<?php } ?>
 		</tbody>
 	</table>
 		<p><a href="#">Create</a></p>
 		<p><a href="index.html">Home</a></p>
-	</body>
-</html>
