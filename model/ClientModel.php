@@ -86,7 +86,7 @@ function createClient()
 	
 	$db = openDatabaseConnection();
 
-	$sql = "INSERT INTO clients(client_firstname, client_lastname, client_phonenumber, client_email) VALUES (:client_firstname, :client_lastname, :client_phonename, :client_email)";
+	$sql = "INSERT INTO clients(client_firstname, client_lastname, client_phonenumber, client_email) VALUES (:client_firstname, :client_lastname, :client_phonenumber, :client_email)";
 	$query = $db->prepare($sql);
 	$query->execute(array(
 		':client_firstname' => $client_firstname,

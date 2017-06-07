@@ -10,3 +10,18 @@
 			"patients" => getAllPatients()
 			));
 	}
+
+	function create()
+	{
+		render("patient/create");
+	}
+
+
+	function createSave()
+	{
+		if(!createPatient()) {
+			header("Location:" . URL . "error/index");
+			exit();
+		}
+		header("Location:" . URL . "patient/index");
+	}

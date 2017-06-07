@@ -18,7 +18,7 @@
 	function createSave()
 	{
 		if(!createClient()) {
-			header("Location:" . URL . "error0/index");
+			header("Location:" . URL . "error/index");
 			exit();
 		}
 		header("Location:" . URL . "client/index");
