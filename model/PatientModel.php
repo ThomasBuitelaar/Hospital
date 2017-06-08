@@ -52,3 +52,21 @@
 	
 	return true;
 }
+
+function deletePatient($id = null) 
+{
+	if (!$id) {
+		return false;
+	}
+	
+	$db = openDatabaseConnection();
+
+	$sql = "DELETE FROM patients WHERE patient_id = :patient_id ";
+	$query = $db->prepare($sql);
+	$query->execute(array(
+		':patient_id' => $id));
+
+	$db = null;
+	
+	return true;
+}

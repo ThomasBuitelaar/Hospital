@@ -26,3 +26,23 @@
 
 		return $query->fetchAll();
 	}
+
+	function createSpecies() 
+{
+	$species_description = isset($_POST['species_description']) ? $_POST['species_description'] : null;
+	
+	if (strlen($species_description) == 0 ) {
+		return false;
+	}
+	
+	$db = openDatabaseConnection();
+
+	$sql = "INSERT INTO species(species_description) VALUES (:species_description)";
+	$query = $db->prepare($sql);
+	$query->execute(array(
+		':species_description' => $species_description));
+
+	$db = null;
+	
+	return true;
+}

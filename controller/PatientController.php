@@ -25,3 +25,12 @@
 		}
 		header("Location:" . URL . "patient/index");
 	}
+
+	function delete($id)
+		{
+			if (!deletePatient($id)) {
+				header("Location:" . URL . "error/index");
+				exit();
+			}
+			header("Location:" . URL . "patient/index");
+		}

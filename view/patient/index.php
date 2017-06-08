@@ -24,8 +24,8 @@
 				<td><?= $patient['species_id']; ?></td>
 				<td><?= $patient['patient_status']; ?></td>
 				<td><?= $patient['client_id']; ?></td>
-				<td class="center"><a href="#">edit</a></td>
-				<td class="center"><a href="#">delete</a></td>
+				<td class="center"><a href="<?php echo URL . 'patient/edit/' . $patient['patient_id']; ?>">edit</a></td>
+				<td class="center"><a href="<?php echo URL . 'patient/delete/' . $patient['patient_id']; ?>">delete</a></td>
 			</tr>
 			<?php } ?>
 		</tbody>
