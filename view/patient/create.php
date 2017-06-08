@@ -2,13 +2,15 @@
 	<h1>Toevoegen</h1>
 	<form action="<?= URL ?>patient/createSave" method="post">
 
-	<label>Name: </label><input type="text" name="patient_name" placeholder="Patient name"> <br>
+	<label>Name: </label><input type="text" name="patient_name" placeholder="Patient name">
+	<br>
 
 	<lable>Species: </lable>
 		<select name="species_id">
 			<option value="1">Hond</option>
 			<option value="2">Kat</option>
-		</select><br>
+		</select>
+			<br>
 
 
 	<label>Client: </label>

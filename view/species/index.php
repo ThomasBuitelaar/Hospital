@@ -10,7 +10,7 @@
 		<thead>
 			<tr>
 				<th>#</th>
-				<th>Description</th>
+				<th>Species</th>
 				<th colspan="2">Action</th>
 			</tr>
 		</thead>
