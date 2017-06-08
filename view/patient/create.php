@@ -4,11 +4,21 @@
 
 	<label>Name: </label><input type="text" name="patient_name" placeholder="Patient name"> <br>
 
-	<lable>Species
+	<lable>Species: </lable>
+		<select name="species_id">
+			<option value="1">Hond</option>
+			<option value="2">Kat</option>
+		</select><br>
 
-	<label>Phone number: </label><input type="text" name="client_phonenumber" placeholder="Phonenumber"><br>
 
-	<label>E-Mail: </label><input type="text" name="client_email" placeholder="info@hospital.com"><br>
+	<label>Client: </label>
+		<select name="client_id">
+			<option value="1">1</option>
+			<option value="2">2</option>
+		</select>
+			<br>
+
+	<label>Patient Status: </label><textarea type="comment" rows="5" cols="40" name="patient_status"></textarea><br>
 
 	<input type="submit" value="Add">
 </form> 

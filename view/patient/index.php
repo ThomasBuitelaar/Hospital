@@ -30,5 +30,5 @@
 			<?php } ?>
 		</tbody>
 	</table>
-		<p><a href="#">Create</a></p>
+		<p><a href="<?= URL ?>patient/create">Create</a></p>
 		<p><a href="index.html">Home</a></p>
