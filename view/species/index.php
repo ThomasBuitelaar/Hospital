@@ -20,7 +20,7 @@
 				<td><?= $species['species_id']; ?></td>
 				<td><?= $species['species_description']; ?></td>
 				<td class="center"><a href="<?php echo URL . 'species/edit/' . $species['species_id']; ?>">edit</a></td>
-				<td class="center"><a href="<?php echo URL . 'species/edit/' . $species['species_id']; ?>">delete</a></td>
+				<td class="center"><a href="<?php echo URL . 'species/delete/' . $species['species_id']; ?>">delete</a></td>
 			</tr>
 			<?php } ?>
 		</tbody>

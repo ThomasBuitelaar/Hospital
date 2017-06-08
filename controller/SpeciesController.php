@@ -22,3 +22,29 @@
 		}
 		header("Location:" . URL . "species/index");
 	}
+
+	function delete($id)
+		{
+			if (!deleteSpecies($id)) {
+				header("Location:" . URL . "error/index");
+				exit();
+			}
+			header("Location:" . URL . "species/index");
+		}
+
+	function edit($species_id)
+	{
+		render("species/edit", array(
+			"species" => getAllSpecies()
+			));
+	}
+
+
+	function editSave()
+	{
+		if (!editSpecies()) {
+			header("Location:" . URL . "error/index");
+			exit();
+		}
+		header("Location:" . URL . "species/index");
+	}

@@ -34,3 +34,20 @@
 			}
 			header("Location:" . URL . "patient/index");
 		}
+
+	function edit($patient_id)
+	{
+		render("patient/edit", array(
+			"patient" => getAllPatients()
+			));
+	}
+
+
+	function editSave()
+	{
+		if (!editPatient()) {
+			header("Location:" . URL . "error/index");
+			exit();
+		}
+		header("Location:" . URL . "patient/index");
+	}
