@@ -25,5 +25,5 @@
 			<?php } ?>
 		</tbody>
 	</table>
-		<p><a href="#">Create</a></p>
+		<p><a href="<?= URL ?>species/create">Create</a></p>
 		<p><a href="<?= URL ?>home/index">Home</a></p>

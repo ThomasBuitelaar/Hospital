@@ -40,7 +40,7 @@
 	
 	$db = openDatabaseConnection();
 
-	$sql = "INSERT INTO patients(patient_name, species_id, client_id, patient_status) VALUES (:patient_firstname, :species_id, :client_id, :patient_status)";
+	$sql = "INSERT INTO patients(patient_name, species_id, client_id, patient_status) VALUES (:patient_name, :species_id, :client_id, :patient_status)";
 	$query = $db->prepare($sql);
 	$query->execute(array(
 		':patient_name' => $patient_name,
