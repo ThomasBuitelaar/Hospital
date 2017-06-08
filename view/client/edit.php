@@ -2,9 +2,9 @@
 	<h1>Edit</h1>
 	<form action="<?= URL ?>client/editSave" method="post">
 
-	<label>Firstname: </label><input type="text" name="client_firstname"><br>
+	<label>Firstname: </label><input type="text" name="client_firstname" value="<?= $client['client_firstname']; ?>"><br>
 
-	<label>Lastname: </label><input type="text" name="client_lastname"><br>
+	<label>Lastname: </label><input type="text" name="client_lastname" value="<?= $client['client_lastname']; ?>"><br>
 
 	<label>Phone number: </label><input type="text" name="client_phonenumber" placeholder="Phonenumber"><br>
 
