@@ -7,8 +7,7 @@
 
 	<lable>Species: </lable>
 		<select name="species_id">
-			<option value="1">Hond</option>
-			<option value="2">Kat</option>
+			
 		</select>
 			<br>
 

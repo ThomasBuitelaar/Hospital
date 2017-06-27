@@ -28,7 +28,7 @@
 	function edit($client_id)
 	{
 		render("client/edit", array(
-			"client" => getAllClients()
+			"client" => getClient($client_id)
 			));
 	}
 

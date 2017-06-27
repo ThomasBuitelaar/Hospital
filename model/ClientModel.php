@@ -41,8 +41,13 @@ function editClient()
 
 	$db = openDatabaseConnection();
 
-	$sql = "UPDATE clients SET client_firstname = :client_firstname, client_lastname = :client_lastname, client_phonenumber = :client_phonenumber, client_email = :client_email WHERE id = :id";
-	$query = $db->perpare($sql);
+		$sql = "UPDATE clients SET 		
+								client_firstname = :client_firstname,
+								client_lastname = :client_lastname,
+								client_phonenumber = :client_phonenumber,
+								client_email = :client_email 
+								WHERE id = :id";
+	$query = $db->prepare($sql);
 	$query->execute(array(
 		':client_firstname' => $client_firstname,
 		':client_lastname' => $client_lastname,
